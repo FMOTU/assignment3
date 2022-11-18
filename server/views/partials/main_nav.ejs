@@ -1,7 +1,9 @@
 <!--NavBar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<!--Change Navbar to side bar -->
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+  
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">INFR3120</a>
+    <a class="navbar-brand" href="/">Assignment 3 CRUD Operation</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -14,7 +16,7 @@
         <% } else { %>
           <a class="nav-link" href="/home">
         <% } %>
-          <i class="fa-solid fa-lg fa-house-user"></i> Home</a>
+          <i class="fa-solid fa-house"></i> Home</a>
         </li>
 
         <li class="nav-item">
@@ -23,37 +25,20 @@
         <% } else { %>
           <a class="nav-link" href="/about">
         <% } %>
-          <i class="fa-sharp fa-solid fa-circle-info"></i>
+          <i class="fa-solid fa-circle-question"></i>
            About</a>
         </li>        
 
         <li class="nav-item">
-        <% if (title == "Service") { %>
-          <a class="nav-link active" href="/services">
+        <% if (title == "Workout Routine") { %>
+          <a class="nav-link active" href="/WorkoutList">
         <% } else { %>
-          <a class="nav-link" href="/services">
+          <a class="nav-link" href="/WorkoutList">
         <% } %>
-          <i class="fa-solid fa-gears"></i> Service </a>
+          <i class="fa-solid fa-dumbbell"></i> Workout </a> <!--Image for nav-->
         </li>
 
-        <li class="nav-item">
-        <% if (title == "Products") { %>
-          <a class="nav-link active" href="/products">
-        <% } else { %>
-          <a class="nav-link" href="/products">
-        <% } %>
-          <i class="fa-brands fa-elementor"></i>
-           Products</a>
-        </li>
 
-        <li class="nav-item">
-        <% if (title == "Contact us") { %>
-          <a class="nav-link active" href="/contact">
-        <% } else { %>
-          <a class="nav-link" href="/contact">
-        <% } %>
-          <i class="fa-solid fa-phone"></i> 
-          Contact us</a>
         </li>
 
     </div>

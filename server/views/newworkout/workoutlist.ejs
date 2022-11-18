@@ -1,0 +1,54 @@
+<%- include('partials/header.ejs') %>
+<%- include('partials/main_nav.ejs') %>
+
+<!-- Main Content -->
+
+<main class="container">
+    <div class ="row">
+      <div class ="col-md-offset-3 col-md-14">
+      <h1><%= title %></h1>
+      <a herf="/WorkoutList" class="btn brn-primary" role="button">
+        <i class="fas fa-plus-circle"></i>Adjust an Entry</a>
+      <br>
+      <br>
+  <table class = "table table-bordered table-striped table-hover">
+  <tr>
+    <th class="text-center col-3">Exercise</th>
+    <th class="text-center col-3">Sets</th>
+    <th class="text-center col-3">Reps</th>
+    <th class="text-center col-3">Rest</th>
+    <th class="text-center col-3">Intensity</th>
+    <th class="text-center col-3"></th>
+    <th class="text-center col-3"></th>
+  </tr>
+  <!--Make loop to repeat template -->
+  <!--Could be workoutchart, workoutmodel double check later-->
+  <% for(let count=0; count<Workout.length; count++){ %>
+    <tr>
+      <td class="text-center col-3"><%= Workout[count].Exercise %></td>
+      <td class="text-center col-3"><%= Workout[count].sets %></td>
+      <td class="text-center col-3"><%= Workout[count].Reps %></td>
+      <td class="text-center col-3"><%= Workout[count].Rest %></td>
+      <td class="text-center col-3"><%= Workout[count].Intensity %></td>
+      <td class="text-center col-3"><%= Workout[count].Lifted %></td>
+      <td class="text-center col-3">
+        <a href="/workout/edit/<%= Workout[count]._id %>"
+          class="btn btn-primary"
+          <i class="fas fa-pencil-alt"></i> Edit </a>
+        </td>
+        <td class="text-center col-3">
+          <a href="/workout/delete/<%= Workout[count]._id %>"
+            class="btn btn-primary"
+            <i class="fas fa-pencil-alt"></i> delete </a>
+          </td>
+    </tr>
+    
+  <% } %>
+  </table>
+</div>
+</div>
+</main>
+<%- include('partials/bottom_nav.ejs') %>
+<%- include('partials/footer.ejs') %>
+
+
